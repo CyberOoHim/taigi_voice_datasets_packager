@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "taigi-voice-datasets-packager"
+version = "0.1.0"
+description = "Tools for fetching YouTube subtitles and slicing media for AI datasets"
+readme = "README.md"
+authors = [{ name = "Gemini CLI" }]
+dependencies = [
+    "pysrt",
+    "tqdm",
+    "youtube-transcript-api>=0.6.2",
+    "yt-dlp>=2024.3.10",
+    "soundfile",
+    "numpy",
+    "python-dotenv",
+    "pyarrow",
+    "datasets",
+    "huggingface_hub"
+]
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+gpu = [
+    "torch>=2.0.0",
+    "torchvision",
+    "torchaudio",
+    "openai-whisper"
+]
+stats = [
+    "datasets",
+    "pandas"
+]
+tts = [
+    "num2words"
+]
+
+[project.scripts]
+media-slice = "media_slicer.srt_clipper:main"
+media-compile = "media_slicer.media_compiler:main"
+media-conv = "media_converter.media_conv:main"
+media-fetch-subs = "media_fetcher.fetch_subtitles:main"
+media-fetch-subs-fb = "media_fetcher.fetch_subtitles_fb:main"
+media-download-video = "media_fetcher.download_video:main"
+media-download-audio = "media_fetcher.download_audio:main"
+media-convert-subs = "media_fetcher.convert_subtitles:main"
+media-extract-json = "media_fetcher.extract_json:main"
+media-merge-translations = "media_fetcher.merge_translations:main"
+media-edit-sub = "media_fetcher.edit_sub:main"
+media-patch-meta = "media_fetcher.patch_metadata:main"
+media-sync = "media_fetcher.sync_media:main"
+dataset-pack = "dataset_packager.cli:main"
+dataset-stats = "dataset_packager.stats_cli:main"
+
+[tool.setuptools.packages.find]
+where = [
+    ".agent/skills/media-slicer/src",
+    ".agent/skills/media-converter/src",
+    ".agent/skills/media-fetcher/src",
+    ".agent/skills/dataset-packager/src"
+]

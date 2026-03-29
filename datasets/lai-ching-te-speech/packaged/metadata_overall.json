@@ -1,0 +1,227 @@
+{
+  "pipeline_args": {
+    "start_stage": 1,
+    "end_stage": 5,
+    "skip_normalization": false,
+    "clips": "C:\\Users\\marti\\Projects\\taigi_voice_datasets_packager\\media-downloads\\video\\clips\\local_cut_\u5168\u6587\u8cf4\u6e05\u5fb7\u5168\u4ee3\u6703\u6f14\u8aaa\u5167\u5bb9\u4e00\u6b21\u770b\u8d8a\u8b1b\u8d8a\u6fc0\u6602_\u5168\u7a0b\u53f0\u8a9e\u8868\u9054\u8b77\u6c11\u4e3b_204.0_300.0_20260316_140632",
+    "manifest": "C:\\Users\\marti\\Projects\\taigi_voice_datasets_packager\\media-downloads\\video\\clips\\local_cut_\u5168\u6587\u8cf4\u6e05\u5fb7\u5168\u4ee3\u6703\u6f14\u8aaa\u5167\u5bb9\u4e00\u6b21\u770b\u8d8a\u8b1b\u8d8a\u6fc0\u6602_\u5168\u7a0b\u53f0\u8a9e\u8868\u9054\u8b77\u6c11\u4e3b_204.0_300.0_20260316_140632\\local_cut_\u5168\u6587\u8cf4\u6e05\u5fb7\u5168\u4ee3\u6703\u6f14\u8aaa\u5167\u5bb9\u4e00\u6b21\u770b\u8d8a\u8b1b\u8d8a\u6fc0\u6602_\u5168\u7a0b\u53f0\u8a9e\u8868\u9054\u8b77\u6c11\u4e3b_204.0_300.0_20260316_140632_manifest.csv",
+    "dataset_name": "lai-ching-te-speech",
+    "norm_dir": "C:\\Users\\marti\\Projects\\taigi_voice_datasets_packager\\datasets\\lai-ching-te-speech\\normalized",
+    "out": "C:\\Users\\marti\\Projects\\taigi_voice_datasets_packager\\datasets\\lai-ching-te-speech\\packaged",
+    "text_col": null,
+    "sr": 16000,
+    "lufs": -23.0,
+    "workers": 4,
+    "tts": false,
+    "lang": "nan",
+    "max_tts_chars": 200,
+    "remove_punctuation": false,
+    "cer": false,
+    "filter_audio": true,
+    "min_dur": null,
+    "max_dur": null,
+    "min_snr": 20.0,
+    "max_cer": 0.15,
+    "min_wps": 0.0,
+    "max_wps": 5.0,
+    "train": 0.9,
+    "val": 0.05,
+    "test": 0.05,
+    "seed": 42,
+    "speaker_col": null,
+    "stratify_dur": false,
+    "shard_size": 500,
+    "push_to_hub": null,
+    "token": null
+  },
+  "subtitle_metadata": {
+    "Sync Offset": "203.500s",
+    "Dropped Gaps": "[]",
+    "Title": "\u5168\u6587\uff0f\u8cf4\u6e05\u5fb7\u5168\u4ee3\u6703\u6f14\u8aaa\u5167\u5bb9\u4e00\u6b21\u770b\uff01\u8d8a\u8b1b\u8d8a\u6fc0\u6602\u3000\u5168\u7a0b\u53f0\u8a9e\u8868\u9054\u8b77\u6c11\u4e3b\u6c7a\u5fc3\uff0d\u6c11\u8996\u65b0\u805e",
+    "Channel": "\u6c11\u8996\u65b0\u805e\u7db2 Formosa TV News network",
+    "Video ID": "OtZUjdHpuWM",
+    "URL": "https://www.youtube.com/watch?v=OtZUjdHpuWM",
+    "Language": "Taigi",
+    "Duration": "883s",
+    "Total Segments": "21"
+  },
+  "stages": {
+    "1_normalized": {
+      "stage": 1,
+      "name": "audio_normalizer",
+      "args": {
+        "clips": "C:\\Users\\marti\\Projects\\taigi_voice_datasets_packager\\media-downloads\\video\\clips\\local_cut_\u5168\u6587\u8cf4\u6e05\u5fb7\u5168\u4ee3\u6703\u6f14\u8aaa\u5167\u5bb9\u4e00\u6b21\u770b\u8d8a\u8b1b\u8d8a\u6fc0\u6602_\u5168\u7a0b\u53f0\u8a9e\u8868\u9054\u8b77\u6c11\u4e3b_204.0_300.0_20260316_140632",
+        "out": "C:\\Users\\marti\\Projects\\taigi_voice_datasets_packager\\datasets\\lai-ching-te-speech\\normalized",
+        "sr": 16000,
+        "lufs": -23.0,
+        "workers": 4,
+        "manifest": "local_cut_\u5168\u6587\u8cf4\u6e05\u5fb7\u5168\u4ee3\u6703\u6f14\u8aaa\u5167\u5bb9\u4e00\u6b21\u770b\u8d8a\u8b1b\u8d8a\u6fc0\u6602_\u5168\u7a0b\u53f0\u8a9e\u8868\u9054\u8b77\u6c11\u4e3b_204.0_300.0_20260316_140632_manifest.csv"
+      },
+      "stats": {
+        "normalized": 11,
+        "errors": 0
+      },
+      "subtitle_metadata": {
+        "Sync Offset": "203.500s",
+        "Dropped Gaps": "[]",
+        "Title": "\u5168\u6587\uff0f\u8cf4\u6e05\u5fb7\u5168\u4ee3\u6703\u6f14\u8aaa\u5167\u5bb9\u4e00\u6b21\u770b\uff01\u8d8a\u8b1b\u8d8a\u6fc0\u6602\u3000\u5168\u7a0b\u53f0\u8a9e\u8868\u9054\u8b77\u6c11\u4e3b\u6c7a\u5fc3\uff0d\u6c11\u8996\u65b0\u805e",
+        "Channel": "\u6c11\u8996\u65b0\u805e\u7db2 Formosa TV News network",
+        "Video ID": "OtZUjdHpuWM",
+        "URL": "https://www.youtube.com/watch?v=OtZUjdHpuWM",
+        "Language": "Taigi",
+        "Duration": "883s",
+        "Total Segments": "21"
+      }
+    },
+    "2_cleaned": {
+      "stage": 2,
+      "name": "text_cleaner",
+      "args": {
+        "manifest": "C:\\Users\\marti\\Projects\\taigi_voice_datasets_packager\\datasets\\lai-ching-te-speech\\normalized\\_manifest_1_normalized.csv",
+        "tts": false,
+        "lang": "nan",
+        "max_tts_chars": 200,
+        "remove_punctuation": false
+      },
+      "stats": {
+        "kept": 11,
+        "dropped": 0
+      },
+      "subtitle_metadata": {
+        "Sync Offset": "203.500s",
+        "Dropped Gaps": "[]",
+        "Title": "\u5168\u6587\uff0f\u8cf4\u6e05\u5fb7\u5168\u4ee3\u6703\u6f14\u8aaa\u5167\u5bb9\u4e00\u6b21\u770b\uff01\u8d8a\u8b1b\u8d8a\u6fc0\u6602\u3000\u5168\u7a0b\u53f0\u8a9e\u8868\u9054\u8b77\u6c11\u4e3b\u6c7a\u5fc3\uff0d\u6c11\u8996\u65b0\u805e",
+        "Channel": "\u6c11\u8996\u65b0\u805e\u7db2 Formosa TV News network",
+        "Video ID": "OtZUjdHpuWM",
+        "URL": "https://www.youtube.com/watch?v=OtZUjdHpuWM",
+        "Language": "Taigi",
+        "Duration": "883s",
+        "Total Segments": "21"
+      }
+    },
+    "3_filtered": {
+      "stage": 3,
+      "name": "quality_filter",
+      "args": {
+        "manifest": "C:\\Users\\marti\\Projects\\taigi_voice_datasets_packager\\datasets\\lai-ching-te-speech\\normalized\\_manifest_2_cleaned.csv",
+        "text_col": null,
+        "tts": false,
+        "cer": false,
+        "min_dur": null,
+        "max_dur": null,
+        "min_snr": 20.0,
+        "max_cer": 0.15,
+        "min_wps": 0.0,
+        "max_wps": 5.0,
+        "filter_audio": true,
+        "wav_dir": null,
+        "device": null
+      },
+      "stats": {
+        "kept": 10,
+        "dropped": 1,
+        "reasons": {
+          "snr": 1
+        },
+        "audio_checks_skipped": false
+      },
+      "subtitle_metadata": {
+        "Sync Offset": "203.500s",
+        "Dropped Gaps": "[]",
+        "Title": "\u5168\u6587\uff0f\u8cf4\u6e05\u5fb7\u5168\u4ee3\u6703\u6f14\u8aaa\u5167\u5bb9\u4e00\u6b21\u770b\uff01\u8d8a\u8b1b\u8d8a\u6fc0\u6602\u3000\u5168\u7a0b\u53f0\u8a9e\u8868\u9054\u8b77\u6c11\u4e3b\u6c7a\u5fc3\uff0d\u6c11\u8996\u65b0\u805e",
+        "Channel": "\u6c11\u8996\u65b0\u805e\u7db2 Formosa TV News network",
+        "Video ID": "OtZUjdHpuWM",
+        "URL": "https://www.youtube.com/watch?v=OtZUjdHpuWM",
+        "Language": "Taigi",
+        "Duration": "883s",
+        "Total Segments": "21"
+      }
+    },
+    "4_split": {
+      "stage": 4,
+      "name": "split_dataset",
+      "args": {
+        "manifest": "C:\\Users\\marti\\Projects\\taigi_voice_datasets_packager\\datasets\\lai-ching-te-speech\\normalized\\_manifest_3_filtered.csv",
+        "train": 0.9,
+        "val": 0.05,
+        "test": 0.05,
+        "seed": 42,
+        "speaker_col": null,
+        "stratify_dur": false,
+        "out": "C:\\Users\\marti\\Projects\\taigi_voice_datasets_packager\\datasets\\lai-ching-te-speech\\normalized\\splits"
+      },
+      "stats": {
+        "total": 10,
+        "train": 10,
+        "val": 0,
+        "test": 0,
+        "train_ratio": 1.0,
+        "val_ratio": 0.0,
+        "test_ratio": 0.0,
+        "seed": 42,
+        "method": "random"
+      },
+      "subtitle_metadata": {
+        "Sync Offset": "203.500s",
+        "Dropped Gaps": "[]",
+        "Title": "\u5168\u6587\uff0f\u8cf4\u6e05\u5fb7\u5168\u4ee3\u6703\u6f14\u8aaa\u5167\u5bb9\u4e00\u6b21\u770b\uff01\u8d8a\u8b1b\u8d8a\u6fc0\u6602\u3000\u5168\u7a0b\u53f0\u8a9e\u8868\u9054\u8b77\u6c11\u4e3b\u6c7a\u5fc3\uff0d\u6c11\u8996\u65b0\u805e",
+        "Channel": "\u6c11\u8996\u65b0\u805e\u7db2 Formosa TV News network",
+        "Video ID": "OtZUjdHpuWM",
+        "URL": "https://www.youtube.com/watch?v=OtZUjdHpuWM",
+        "Language": "Taigi",
+        "Duration": "883s",
+        "Total Segments": "21"
+      }
+    },
+    "5_packaged": {
+      "stage": 5,
+      "name": "packager",
+      "args": {
+        "splits": "C:\\Users\\marti\\Projects\\taigi_voice_datasets_packager\\datasets\\lai-ching-te-speech\\normalized\\splits",
+        "wav_dir": "C:\\Users\\marti\\Projects\\taigi_voice_datasets_packager\\datasets\\lai-ching-te-speech\\normalized",
+        "out": "C:\\Users\\marti\\Projects\\taigi_voice_datasets_packager\\datasets\\lai-ching-te-speech\\packaged",
+        "tts": false,
+        "speaker_col": null,
+        "shard_size": 500,
+        "dataset_name": "lai-ching-te-speech",
+        "push_to_hub": null,
+        "token": null,
+        "lang": "nan"
+      },
+      "stats": {
+        "dataset_name": "lai-ching-te-speech",
+        "mode": "ASR",
+        "splits": {
+          "train": 10
+        },
+        "total_samples": 10,
+        "total_hours": 0.03,
+        "sample_rate": 16000,
+        "schema": [
+          "audio",
+          "text",
+          "duration_s",
+          "snr_db",
+          "wps",
+          "original_text",
+          "split"
+        ]
+      },
+      "subtitle_metadata": {
+        "Sync Offset": "203.500s",
+        "Dropped Gaps": "[]",
+        "Title": "\u5168\u6587\uff0f\u8cf4\u6e05\u5fb7\u5168\u4ee3\u6703\u6f14\u8aaa\u5167\u5bb9\u4e00\u6b21\u770b\uff01\u8d8a\u8b1b\u8d8a\u6fc0\u6602\u3000\u5168\u7a0b\u53f0\u8a9e\u8868\u9054\u8b77\u6c11\u4e3b\u6c7a\u5fc3\uff0d\u6c11\u8996\u65b0\u805e",
+        "Channel": "\u6c11\u8996\u65b0\u805e\u7db2 Formosa TV News network",
+        "Video ID": "OtZUjdHpuWM",
+        "URL": "https://www.youtube.com/watch?v=OtZUjdHpuWM",
+        "Language": "Taigi",
+        "Duration": "883s",
+        "Total Segments": "21"
+      }
+    }
+  },
+  "start_time": 1774745448.6587112,
+  "success": true,
+  "end_time": 1774745452.893064,
+  "elapsed_s": 4.2343528270721436
+}

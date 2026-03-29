@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Environment / Config
+.env
+config.json
+
+# Project Data (Large Files)
+datasets/*
+media-downloads/*
+media-subtitles/*
+weights/
+
+# Build / Info
+*.egg-info/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# demo data
+# 1. Allow Git to enter the subdirectories
+!media-downloads/audio/
+!media-downloads/video/
+!media-downloads/video/clips/
+!datasets/lai-ching-te-speech/
+
+# 2. But immediately re-ignore their contents (so everything else stays ignored)
+media-downloads/audio/*
+media-downloads/video/*
+media-downloads/video/clips/*
+datasets/lai-ching-te-speech/*
+
+# 3. Whitelist ONLY the specific demo files
+!media-downloads/audio/partial_全文賴清德全代會演說內容一次看越講越激昂　全程台語表達護民主_140.0_300.0_20260316_035450.wav
+!media-subtitles/resync_賴清德全代會.srt
+!media-downloads/video/clips/local_cut_全文賴清德全代會演說內容一次看越講越激昂_全程台語表達護民主_204.0_300.0_20260316_140632/
+!datasets/lai-ching-te-speech/packaged/

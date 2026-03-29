@@ -1,0 +1,19 @@
+{
+  "dataset_name": "lai-ching-te-speech",
+  "mode": "ASR",
+  "splits": {
+    "train": 10
+  },
+  "total_samples": 10,
+  "total_hours": 0.03,
+  "sample_rate": 16000,
+  "schema": [
+    "audio",
+    "text",
+    "duration_s",
+    "snr_db",
+    "wps",
+    "original_text",
+    "split"
+  ]
+}
