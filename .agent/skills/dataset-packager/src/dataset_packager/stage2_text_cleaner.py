@@ -25,7 +25,7 @@ Both modes:
   • Strip SRT HTML tags (in case any slipped through)
   • Strip leading/trailing whitespace
   • Reject texts that are purely numeric, URL-like, or gibberish
-  • Add `text_asr` or `text_tts` column (keeps original `text` untouched)
+  • Update `text` column with cleaned transcript (keeps original in Stage 5 metadata)
 
 Usage
 -----
@@ -250,7 +250,7 @@ examples:
         sys.exit(f"ERROR: manifest not found: {manifest_path}")
 
     mode     = "TTS" if args.tts else "ASR"
-    out_col  = "text_tts" if args.tts else "text_asr"
+    out_col  = "text"
     min_chars = MIN_TTS_CHARS if args.tts else MIN_ASR_CHARS
 
     print(f"Mode     : {mode}")
@@ -301,7 +301,7 @@ examples:
             writer.writerows(out_rows)
 
     print(f"\n{'─' * 50}")
-    print(f"  Kept    : {len(out_rows)}  (column '{out_col}' added)")
+    print(f"  Kept    : {len(out_rows)}  (column 'text' updated)")
     print(f"  Dropped : {dropped}  (garbage / too short / too long)")
     print(f"  Manifest: {manifest_out.name}  (written)")
     print(f"{'─' * 50}")

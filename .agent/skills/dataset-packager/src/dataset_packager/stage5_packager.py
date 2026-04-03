@@ -100,7 +100,7 @@ def check_deps() -> None:
     if missing:
         sys.exit(
             f"ERROR: missing dependencies: {', '.join(missing)}\n"
-            f"       Please run: pip install -e ."
+            f"       pip install {' '.join(missing)} --break-system-packages"
         )
 
 
@@ -170,7 +170,7 @@ def rows_to_pyarrow(
     skipped = 0
 
     for row in rows:
-        wav_path  = wav_dir / row["wav_file"]
+        wav_path  = wav_dir / row["audio"]
         wav_bytes = read_wav_bytes(str(wav_path))
 
         if wav_bytes is None:
@@ -183,7 +183,7 @@ def rows_to_pyarrow(
             continue
 
         audio_bytes_col.append(wav_bytes)
-        audio_path_col.append(row["wav_file"])
+        audio_path_col.append(row["audio"])
         text_col_data.append(text)
         duration_col.append(float(row.get("duration_s", 0) or 0))
         # Preserve None for missing SNR/WPS so they're distinguishable from 0
@@ -376,7 +376,7 @@ examples:
     splits_dir = Path(args.splits)
     wav_dir    = Path(args.wav_dir)
     out_dir    = Path(args.out)
-    text_col   = "text_tts" if args.tts else "text_asr"
+    text_col   = "text"
     mode       = "TTS" if args.tts else "ASR"
 
     print(f"Mode       : {mode}")

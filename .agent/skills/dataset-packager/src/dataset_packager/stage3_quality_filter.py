@@ -186,8 +186,8 @@ examples:
     )
     parser.add_argument("--manifest",  required=True,
                         help="Path to _manifest.csv (after text_cleaner)")
-    parser.add_argument("--text-col",  default=None,
-                        help="Column name for transcript (defaults to text_tts if --tts, else text_asr)")
+    parser.add_argument("--text-col",  default="text",
+                        help="Column name for transcript (default: text)")
     parser.add_argument("--tts",       action="store_true",
                         help="Use TTS duration limits (1–12 s) instead of ASR (1–15 s)")
     parser.add_argument("--cer",       action="store_true",
@@ -218,7 +218,7 @@ examples:
 
     wav_dir  = Path(args.wav_dir) if args.wav_dir else manifest_path.parent
     mode     = "TTS" if args.tts else "ASR"
-    text_col = args.text_col or ("text_tts" if args.tts else "text_asr")
+    text_col = args.text_col
 
     min_dur = args.min_dur if args.min_dur is not None else (TTS_MIN_DUR if args.tts else ASR_MIN_DUR)
     max_dur = args.max_dur if args.max_dur is not None else (TTS_MAX_DUR if args.tts else ASR_MAX_DUR)
@@ -258,7 +258,7 @@ examples:
     iterator = tqdm(rows, unit="clip") if HAS_TQDM else rows
 
     for row in iterator:
-        wav_file = wav_dir / row["wav_file"]
+        wav_file = wav_dir / row["audio"]
         text     = row.get(text_col, "").strip()
         dur      = float(row.get("duration_s", 0))
 

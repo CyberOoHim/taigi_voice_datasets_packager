@@ -7,7 +7,7 @@ Reads every clip listed in _manifest.csv, rewrites it as:
   • Target sample rate (16000 Hz for ASR, 22050 Hz for TTS)
   • EBU R128 loudness normalized to -23 LUFS  (standard broadcast level)
 
-Outputs a new _manifest.csv with an added `wav_file` column pointing
+Outputs a new _manifest.csv with an added `audio` column pointing
 to the normalized WAV, plus `sample_rate`, `channels`, `duration_s`
 columns verified from the actual output file.
 
@@ -124,7 +124,7 @@ def normalize_clip(
         duration = probe_duration(dst)
         if duration > 0.1:
             return {
-                "wav_file":    dst_path.name,
+                "audio":       dst_path.name,
                 "sample_rate": target_sr,
                 "channels":    1,
                 "duration_s":  round(duration, 4),
@@ -168,7 +168,7 @@ def normalize_clip(
 
     duration = probe_duration(dst)
     return {
-        "wav_file":    dst_path.name,
+        "audio":       dst_path.name,
         "sample_rate": target_sr,
         "channels":    1,
         "duration_s":  round(duration, 4),
